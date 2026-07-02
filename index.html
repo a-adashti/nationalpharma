@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>National Pharma | Pharmaceutical & Medical Equipment Co.</title>
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+       :root {
+           --primary: #0b1e33; 
+           --primary-light: #1e3a5f;
+           --accent: #10b981;  
+           --accent-hover: #059669;
+           --neutral-dark: #1f2937;
+           --neutral-light: #f8fafc;
+           --border-color: #e2e8f0;
+       }
+
+       * {
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+           font-family: 'Inter', sans-serif;
+           scroll-behavior: smooth;
+       }
+
+       body {
+           background-color: var(--neutral-light);
+           color: var(--neutral-dark);
+           line-height: 1.7;
+       }
+
+       header {
+           background-color: rgba(255, 255, 255, 0.95);
+           backdrop-filter: blur(10px);
+           box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+           position: fixed;
+           width: 100%;
+           top: 0;
+           z-index: 1000;
+           border-bottom: 1px solid var(--border-color);
+       }
+
+       .navbar {
+           max-width: 1200px;
+           margin: 0 auto;
+           padding: 18px 20px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
+
+       .logo {
+           font-size: 22px;
+           font-weight: 700;
+           color: var(--primary);
+           text-decoration: none;
+           letter-spacing: 0.5px;
+       }
+
+       .logo span {
+           color: var(--accent);
+       }
+
+       .nav-links {
+           display: flex;
+           list-style: none;
+           gap: 30px;
+       }
+
+       .nav-links a {
+           text-decoration: none;
+           color: var(--neutral-dark);
+           font-weight: 500;
+           font-size: 15px;
+           transition: color 0.3s ease;
+       }
+
+       .nav-links a:hover {
+           color: var(--accent);
+       }
+
+       /* Hero section updated with medical abstract background image overlay */
+       .hero {
+           padding: 220px 20px 160px 20px;
+           background: linear-gradient(135deg, rgba(11, 30, 51, 0.95) 0%, rgba(30, 58, 95, 0.9) 100%), 
+                       url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80');
+           background-size: cover;
+           background-position: center;
+           color: white;
+           text-align: center;
+           position: relative;
+       }
+
+       .hero h1 {
+           font-size: 46px;
+           margin-bottom: 25px;
+           font-weight: 700;
+           line-height: 1.3;
+       }
+
+       .hero p {
+           font-size: 19px;
+           max-width: 800px;
+           margin: 0 auto 40px auto;
+           opacity: 0.9;
+           font-weight: 300;
+       }
+
+       .badge-2026 {
+           background-color: rgba(16, 185, 129, 0.2);
+           color: var(--accent);
+           padding: 6px 16px;
+           border-radius: 50px;
+           font-size: 13px;
+           font-weight: 700;
+           display: inline-block;
+           margin-bottom: 20px;
+           border: 1px solid var(--accent);
+       }
+
+       .btn {
+           background-color: var(--accent);
+           color: white;
+           padding: 14px 35px;
+           border: none;
+           border-radius: 6px;
+           font-size: 16px;
+           font-weight: 500;
+           cursor: pointer;
+           text-decoration: none;
+           transition: all 0.3s ease;
+           display: inline-block;
+           box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+       }
+
+       .btn:hover {
+           background-color: var(--accent-hover);
+           transform: translateY(-2px);
+       }
+
+       .section {
+           max-width: 1200px;
+           margin: 100px auto;
+           padding: 0 20px;
+       }
+
+       .section-title {
+           text-align: center;
+           font-size: 32px;
+           color: var(--primary);
+           margin-bottom: 50px;
+           font-weight: 700;
+       }
+
+       .section-title span {
+           color: var(--accent);
+       }
+
+       .grid-cards {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+           gap: 30px;
+       }
+
+       .profile-card {
+           background: white;
+           padding: 40px 30px;
+           border-radius: 12px;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+           border: 1px solid var(--border-color);
+           transition: all 0.3s ease;
+       }
+
+       .profile-card:hover {
+           box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+           border-top: 4px solid var(--accent);
+       }
+
+       .profile-card h3 {
+           margin-bottom: 20px;
+           color: var(--primary);
+           font-size: 22px;
+       }
+
+       /* Specialty Cards with beautiful cover photos */
+       .specs-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+           gap: 25px;
+           margin-top: 30px;
+       }
+
+       .spec-card {
+           background: white;
+           border-radius: 10px;
+           overflow: hidden;
+           border: 1px solid var(--border-color);
+           box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+           transition: transform 0.3s ease;
+       }
+
+       .spec-card:hover {
+           transform: translateY(-5px);
+       }
+
+       .spec-img {
+           width: 100%;
+           height: 160px;
+           object-fit: cover;
+       }
+
+       .spec-info {
+           padding: 20px;
+           text-align: center;
+           font-weight: 600;
+           color: var(--primary);
+           font-size: 16px;
+       }
+
+       .partners-container {
+           background-color: white;
+           padding: 60px 20px;
+           border-top: 1px solid var(--border-color);
+           border-bottom: 1px solid var(--border-color);
+       }
+
+       .partners-logos {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+           gap: 40px;
+           align-items: center;
+       }
+
+       /* Styling for partner global cards */
+       .partner-brand-card {
+           background: #ffffff;
+           font-size: 15px;
+           font-weight: 700;
+           color: var(--primary-light);
+           padding: 15px 25px;
+           border: 1px solid var(--border-color);
+           border-radius: 8px;
+           box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+           display: flex;
+           align-items: center;
+           gap: 10px;
+       }
+
+       .flag-icon {
+           width: 24px;
+           height: auto;
+           border-radius: 3px;
+       }
+
+       .founders-section {
+           background-color: #f1f5f9;
+           padding: 100px 20px;
+       }
+
+       .founders-grid {
+           max-width: 900px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+           gap: 40px;
+       }
+
+       .founder-card {
+           background: white;
+           border-radius: 14px;
+           overflow: hidden;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+           padding: 40px 30px;
+           text-align: center;
+           border: 1px solid var(--border-color);
+           position: relative;
+       }
+
+       .founder-img {
+           width: 120px;
+           height: 120px;
+           border-radius: 50%;
+           object-fit: cover;
+           margin: 0 auto 25px auto;
+           display: block;
+           border: 3px solid var(--accent);
+           box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+       }
+
+       .founder-card h3 {
+           color: var(--primary);
+           font-size: 22px;
+           margin-bottom: 8px;
+       }
+
+       .founder-card .title-tag {
+           color: var(--accent);
+           font-weight: 700;
+           font-size: 14px;
+           text-transform: uppercase;
+           margin-bottom: 20px;
+           letter-spacing: 0.5px;
+       }
+
+       .founder-card p {
+           color: #4b5563;
+           font-size: 15px;
+           margin-bottom: 25px;
+       }
+
+       .linkedin-btn {
+           display: inline-flex;
+           align-items: center;
+           gap: 8px;
+           background-color: #0077b5;
+           color: white;
+           text-decoration: none;
+           padding: 10px 20px;
+           border-radius: 20px;
+           font-size: 14px;
+           font-weight: 500;
+           transition: background-color 0.3s;
+       }
+
+       .linkedin-btn:hover {
+           background-color: #005582;
+       }
+
+       footer {
+           background-color: var(--primary);
+           color: white;
+           padding: 80px 20px 30px 20px;
+       }
+
+       .footer-content {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+           gap: 40px;
+           margin-bottom: 60px;
+       }
+
+       .footer-col h4 {
+           color: var(--accent);
+           font-size: 18px;
+           margin-bottom: 25px;
+       }
+
+       .footer-col p, .footer-col li {
+           color: #94a3b8;
+           font-size: 15px;
+           list-style: none;
+           margin-bottom: 12px;
+       }
+
+       .footer-bottom {
+           max-width: 1200px;
+           margin: 0 auto;
+           text-align: center;
+           padding-top: 30px;
+           border-top: 1px solid #1e3a5f;
+           color: #64748b;
+           font-size: 14px;
+       }
+
+       @media (max-width: 768px) {
+           .nav-links { display: none; }
+           .hero h1 { font-size: 32px; }
+           .hero p { font-size: 16px; }
+       }
+   </style>
+</head>
+<body>
+
+   <!-- Navigation Header -->
+   <header>
+       <nav class="navbar">
+           <a href="#" class="logo">National <span>Pharma</span></a>
+           <ul class="nav-links">
+               <li><a href="#about">About Us</a></li>
+               <li><a href="#specialties">Specialties</a></li>
+               <li><a href="#partners">Global Partners</a></li>
+               <li><a href="#management">Leadership</a></li>
+               <li><a href="#contact">Contact Us</a></li>
+           </ul>
+       </nav>
+   </header>
+
+   <!-- Hero Section with medical high quality backdrop image -->
+   <section class="hero">
+       <div class="badge-2026">Strategic Vision 2026</div>
+       <h1>National Pharma for Pharmaceutical & Medical Equipment Co.</h1>
+       <p>A trusted cornerstone in distributing innovative pharmaceutical products and medical equipment in the State of Kuwait. Representing premier global agencies to deliver safe, sustainable, and elite healthcare solutions.</p>
+       <a href="#about" class="btn">Explore Company Profile</a>
+   </section>
+
+   <!-- About Pillars -->
+   <section id="about" class="section">
+       <h2 class="section-title">Corporate <span>Pillars & Excellence</span></h2>
+       <div class="grid-cards">
+           <div class="profile-card">
+               <h3>Strategic Vision</h3>
+               <p>To be the premier platform and first-choice partner for leading international healthcare companies looking to establish and scale their presence in the Kuwaiti and GCC markets.</p>
+           </div>
+           <div class="profile-card">
+               <h3>24/7 Logistics Network</h3>
+               <p>Operating an advanced, fully integrated supply chain and MOH-compliant storage facilities around the clock to ensure seamless and efficient delivery of vital medical supplies.</p>
+           </div>
+           <div class="profile-card">
+               <h3>Market Presence</h3>
+               <p>Powered by a specialized team of over 25 professionals, including a highly dedicated medical sales and marketing workforce covering public and private sectors.</p>
+           </div>
+       </div>
+   </section>
+
+   <!-- Medical Specialties Section with Professional Images -->
+   <section id="specialties" class="section">
+       <h2 class="section-title">Medical <span>Specialties</span></h2>
+       <p style="text-align: center; max-width: 600px; margin: -30px auto 40px auto; color: #6b7280;">Expanding dynamically across key and vital therapeutic areas within healthcare:</p>
+
+       <div class="specs-grid">
+           <!-- Gynecology & Obstetrics -->
+           <div class="spec-card">
+               <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80" alt="Gynecology & Obstetrics" class="spec-img">
+               <div class="spec-info">Gynecology & Obstetrics</div>
+           </div>
+           <!-- Pediatrics -->
+           <div class="spec-card">
+               <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=400&q=80" alt="Pediatrics" class="spec-img">
+               <div class="spec-info">Pediatrics</div>
+           </div>
+           <!-- Dermatology -->
+           <div class="spec-card">
+               <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Dermatology" class="spec-img">
+               <div class="spec-info">Dermatology</div>
+           </div>
+           <!-- Urology -->
+           <div class="spec-card">
+               <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80" alt="Urology" class="spec-img">
+               <div class="spec-info">Urology</div>
+           </div>
+           <!-- Hematology -->
+           <div class="spec-card">
+               <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=400&q=80" alt="Hematology" class="spec-img">
+               <div class="spec-info">Hematology</div>
+           </div>
+           <!-- Chest & Immunology -->
+           <div class="spec-card">
+               <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=400&q=80" alt="Chest & Immunology" class="spec-img">
+               <div class="spec-info">Chest & Immunology</div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Global Partners Agencies Section with Flags -->
+   <section id="partners" style="margin-top: 100px;">
+       <h2 class="section-title">Our International <span>Agencies</span></h2>
+       <div class="partners-container">
+           <div class="partners-logos">
+               <div class="partner-brand-card">
+                   <img src="https://flagcdn.com/w40/es.png" class="flag-icon" alt="Spain"> Masenz Danya Group (Spain)
+               </div>
+               <div class="partner-brand-card">
+                   <img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> LC Ingredients (France)
+               </div>
+               <div class="partner-brand-card">
+                   <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="USA"> Revivogen MD (USA)
+               </div>
+               <div class="partner-brand-card">
+                   <img src="https://flagcdn.com/w40/al.png" class="flag-icon" alt="Albania"> PROFARMA (Albania)
+               </div>
+               <div class="partner-brand-card">
+                   <img src="https://flagcdn.com/w40/pl.png" class="flag-icon" alt="Poland"> Geno Scope (Poland)
+               </div>
+               <div class="partner-brand-card">
+                   <img src="https://flagcdn.com/w40/jo.png" class="flag-icon" alt="Jordan"> Femigien (Jordan)
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Executive Leadership Section with Profile Images -->
+   <section id="management" class="founders-section">
+       <h2 class="section-title">Executive <span>Leadership</span></h2>
+       <div class="founders-grid">
+
+           <!-- Ibrahim Hussain -->
+           <div class="founder-card">
+               <img src="https://media.licdn.com/dms/image/v2/D4D03AQE80N-U7M6qCw/profile-displayphoto-shrink_200_200/B4DZOnXpY1GgAc-/0/1733612503936?e=1743033600&v=beta&t=4mH_Sj3_qPj002-C7v0D2H0_Bf0b1S28P8H1M90k7hQ" alt="Ibrahim Hussain" class="founder-img">
+               <h3>Ibrahim Hussain</h3>
+               <div class="title-tag">Co-Founder & Managing Director</div>
+               <p>Directs overall operations and medical compliance. Focuses on product quality, international supply chain dynamics, and regulatory affairs within the Kuwaiti healthcare ecosystem.</p>
+               <a href="https://www.linkedin.com/in/ibrahim-hussain-986413205" target="_blank" class="linkedin-btn">
+                    LinkedIn Profile 🔗
+               </a>
+           </div>
+
+           <!-- Ali Dashti -->
+           <div class="founder-card">
+               <img src="https://media.licdn.com/dms/image/v2/D4D03AQGEBqWqD2ZclA/profile-displayphoto-shrink_200_200/D4D03AQGEBqWqD2ZclA/0/1684347781079?e=1743033600&v=beta&t=D2RkH76B7X07y04V5mK-vL-wN4e8n7Z6l9J8R1k5z20" alt="Ali Dashti" class="founder-img">
+               <h3>Ali Dashti</h3>
+               <div class="title-tag">Co-Founder & Chief Executive Officer</div>
+               <p>Drives strategic development and corporate expansion. Commands international partnership acquisitions, linking world-class healthcare innovations to the local market.</p>
+               <a href="https://www.linkedin.com/in/ali-dashti-795400127" target="_blank" class="linkedin-btn">
+                    LinkedIn Profile 🔗
+               </a>
+           </div>
+
+       </div>
+   </section>
+
+   <!-- Professional Footer -->
+   <footer id="contact">
+       <div class="footer-content">
+           <div class="footer-col">
+               <h4>National Pharma</h4>
+               <p>A leading W.L.L company specialized in the distribution of premium pharmaceuticals and advanced medical equipment in Kuwait.</p>
+           </div>
+           <div class="footer-col">
+               <h4>Headquarters</h4>
+               <p>State of Kuwait, Kuwait City, Sharq</p>
+               <p>Jaber Al-Mubarak Street, Injazat Tower, Floor 21</p>
+           </div>
+           <div class="footer-col">
+               <h4>Banking Partner</h4>
+               <p>Primary Financial Partner: National Bank of Kuwait (NBK)</p>
+           </div>
+       </div>
+       <div class="footer-bottom">
+           <p>© 2026 National Pharma for Pharmaceutical and Medical Equipment Co. W.L.L. All Rights Reserved.</p>
+       </div>
+   </footer>
+
+</body>
+</html>
