@@ -13,25 +13,38 @@
        * { box-sizing: border-box; margin: 0; padding: 0; }
        body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.6; }
        h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
-       nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid var(--border); background: white; }
-       .logo { font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-       .logo span { color: #10b981; }
+
+       /* Navbar */
+       nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; border-bottom: 1px solid var(--border); background: white; position: sticky; top: 0; z-index: 1000; }
+       .logo-img { height: 55px; width: auto; object-fit: contain; }
        .nav-links { display: flex; list-style: none; gap: 30px; }
        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; }
+       .nav-links a:hover { color: var(--secondary); }
+
+       /* Banner */
        .header-banner { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 80px 8%; text-align: center; }
        .header-banner h1 { color: white; font-size: 38px; margin-bottom: 15px; }
+
+       /* Layout */
        .section { padding: 60px 8%; }
        .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px; align-items: center; }
        .stat-card { background: var(--light); border: 1px solid var(--border); padding: 30px; border-radius: 4px; margin-bottom: 20px; }
        .stat-card h3 { font-size: 32px; color: var(--secondary); margin-bottom: 5px; }
        .stat-card p { font-size: 15px; color: var(--text); font-weight: 500; }
-       footer { background: #0f172a; color: #94a3b8; padding: 40px 8%; text-align: center; font-size: 14px; margin-top: 60px; }
+
+       /* Footer */
+       footer { background: #0f172a; color: #94a3b8; padding: 60px 8% 30px; border-top: 1px solid #1e293b; margin-top: 60px; }
+       .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+       .footer-col h4 { color: white; margin-bottom: 20px; font-size: 16px; }
+       .footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; text-align: center; font-size: 14px; }
    </style>
 </head>
 <body>
 
    <nav>
-       <a href="index.html" class="logo"><i class="fa-solid fa-prescription-bottle-medical"></i> National <span>Pharma</span></a>
+       <a href="index.html" class="logo-container">
+           <img src="nationalpharmalogo.jpg" alt="National Pharma Logo" class="logo-img">
+       </a>
        <ul class="nav-links">
            <li><a href="index.html">Home</a></li>
            <li><a href="regulatory.html">Regulatory Services</a></li>
@@ -73,13 +86,32 @@
                    <li style="margin-bottom: 12px;"><strong>Infrastructure Modernization:</strong> Over 20 mega hospital extension and construction projects currently backed by the Ministry of Health to expand operational bed capacities.</li>
                </ul>
                <h3 style="font-size:24px; margin-bottom:15px;">Strategic Entry Alignment</h3>
-               <p style="font-size: 15px; color:#64748b;">Because local production satisfies less than 10% of systemic clinical demand, the regulatory gatekeeping framework favors proactive international partnerships managed via verified, asset-ready distributors like National Pharma.</p>
+               <p style="font-size: 15px; color:#64748b;">Because local production satisfies less than 10% of systemic clinical demand, the regulatory gatekeeping framework favors proactive international partnerships managed via verified, asset-ready distributors like National Pharma. Contact us at info@nationalpharma.net.</p>
            </div>
        </div>
    </section>
 
    <footer>
-       <p>&copy; 2026 National Pharma. Statistical Sources: Grand View Research / GCC Health Reports.</p>
+       <div class="footer-grid">
+           <div class="footer-col">
+               <h4 style="color:white; font-size:18px; margin-bottom:10px;">National Pharma</h4>
+               <p>Trusted Pharmaceutical & Medical Device Distribution Partner in the State of Kuwait. Headquartered in Kuwait City, operating under strict Good Distribution Practices (GDP).</p>
+           </div>
+           <div class="footer-col">
+               <h4>Market Access Links</h4>
+               <ul>
+                   <li><a href="regulatory.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Regulatory Services</a></li>
+                   <li><a href="why-kuwait.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Why Kuwait Analysis</a></li>
+               </ul>
+           </div>
+           <div class="footer-col">
+               <h4>HQ Address</h4>
+               <p>Injazat Tower, Floor 21<br>Kuwait City, State of Kuwait<br>Email: info@nationalpharma.net</p>
+           </div>
+       </div>
+       <div class="footer-bottom">
+           <p>&copy; 2026 National Pharma. Statistical Sources: Grand View Research / GCC Health Reports. Support: info@nationalpharma.net</p>
+       </div>
    </footer>
 
 </body>
