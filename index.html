@@ -1,759 +1,248 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>National Pharma | Pharmaceutical & Medical Equipment Co.</title>
+   <title>National Pharma | Pharmaceutical & Medical Device Distribution</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
    <style>
-       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
        :root {
-           --primary: #0b1e33; 
-           --primary-light: #1e3a5f;
-           --accent: #10b981;  
-           --accent-hover: #059669;
-           --neutral-dark: #1f2937;
-           --neutral-light: #f8fafc;
-           --border-color: #e2e8f0;
-       }
-
-       * {
-           box-sizing: border-box;
-           margin: 0;
-           padding: 0;
-           font-family: 'Inter', sans-serif;
-           scroll-behavior: smooth;
-       }
-
-       body {
-           background-color: var(--neutral-light);
-           color: var(--neutral-dark);
-           line-height: 1.75;
-       }
-
-       header {
-           background-color: rgba(255, 255, 255, 0.95);
-           backdrop-filter: blur(10px);
-           box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-           position: fixed;
-           width: 100%;
-           top: 0;
-           z-index: 1000;
-           border-bottom: 1px solid var(--border-color);
-       }
-
-       .navbar {
-           max-width: 1200px;
-           margin: 0 auto;
-           padding: 14px 20px;
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-       }
-
-       .logo-container {
-           display: flex;
-           align-items: center;
-           gap: 12px;
-           text-decoration: none;
-       }
-
-       .brand-logo-img {
-           height: 48px;
-           width: auto;
-           object-fit: contain;
-       }
-
-       .logo-text {
-           font-size: 22px;
-           font-weight: 800;
-           color: var(--primary);
-           letter-spacing: 0.5px;
-       }
-
-       .logo-text span {
-           color: var(--accent);
-       }
-
-       .nav-links {
-           display: flex;
-           list-style: none;
-           gap: 25px;
-       }
-
-       .nav-links a {
-           text-decoration: none;
-           color: var(--neutral-dark);
-           font-weight: 600;
-           font-size: 14px;
-           transition: color 0.3s ease;
-       }
-
-       .nav-links a:hover {
-           color: var(--accent);
-       }
-
-       .hero {
-           padding: 240px 20px 180px 20px;
-           background: linear-gradient(135deg, rgba(11, 30, 51, 0.96) 0%, rgba(30, 58, 95, 0.92) 100%), 
-                       url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80');
-           background-size: cover;
-           background-position: center;
-           color: white;
-           text-align: center;
-       }
-
-       .hero h1 {
-           font-size: 52px;
-           margin-bottom: 25px;
-           font-weight: 800;
-           line-height: 1.25;
-           letter-spacing: -0.5px;
-       }
-
-       .hero p {
-           font-size: 20px;
-           max-width: 850px;
-           margin: 0 auto 40px auto;
-           opacity: 0.9;
-           font-weight: 300;
-       }
-
-       .badge-2026 {
-           background-color: rgba(16, 185, 129, 0.15);
-           color: var(--accent);
-           padding: 6px 18px;
-           border-radius: 50px;
-           font-size: 13px;
-           font-weight: 700;
-           display: inline-block;
-           margin-bottom: 25px;
-           border: 1px solid rgba(16, 185, 129, 0.4);
-           text-transform: uppercase;
-           letter-spacing: 1px;
-       }
-
-       .btn {
-           background-color: var(--accent);
-           color: white;
-           padding: 15px 40px;
-           border: none;
-           border-radius: 6px;
-           font-size: 16px;
-           font-weight: 600;
-           cursor: pointer;
-           text-decoration: none;
-           transition: all 0.3s ease;
-           display: inline-block;
-           box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
-       }
-
-       .btn:hover {
-           background-color: var(--accent-hover);
-           transform: translateY(-2px);
-       }
-
-       .section {
-           max-width: 1200px;
-           margin: 120px auto;
-           padding: 0 20px;
-       }
-
-       .section-title {
-           text-align: center;
-           font-size: 36px;
-           color: var(--primary);
-           margin-bottom: 15px;
-           font-weight: 800;
-           letter-spacing: -0.5px;
-       }
-
-       .section-subtitle {
-           text-align: center;
-           color: #6b7280;
-           font-size: 16px;
-           max-width: 700px;
-           margin: 0 auto 60px auto;
-       }
-
-       .section-title span {
-           color: var(--accent);
-       }
-
-       .corporate-block {
-           background: white;
-           padding: 50px;
-           border-radius: 16px;
-           box-shadow: 0 10px 40px rgba(0,0,0,0.02);
-           border: 1px solid var(--border-color);
-           margin-bottom: 40px;
-       }
-
-       .corporate-block h3 {
-           font-size: 24px;
-           color: var(--primary);
-           margin-bottom: 20px;
-           font-weight: 700;
-       }
-
-       .corporate-block p {
-           color: #4b5563;
-           font-size: 16px;
-           line-height: 1.8;
-           margin-bottom: 20px;
-       }
-
-       .grid-3 {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-           gap: 30px;
-       }
-
-       .grid-2 {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-           gap: 30px;
-       }
-
-       .feature-card {
-           background: white;
-           padding: 40px 35px;
-           border-radius: 12px;
-           box-shadow: 0 10px 30px rgba(0,0,0,0.01);
-           border: 1px solid var(--border-color);
-           transition: all 0.3s ease;
-       }
-
-       .feature-card:hover {
-           box-shadow: 0 15px 40px rgba(0,0,0,0.04);
-           border-top: 4px solid var(--accent);
-           transform: translateY(-2px);
-       }
-
-       .feature-card h4 {
-           font-size: 20px;
-           color: var(--primary);
-           margin-bottom: 15px;
-           font-weight: 700;
-       }
-
-       .feature-card p {
-           color: #4b5563;
-           font-size: 15px;
-           line-height: 1.7;
-       }
-
-       .market-highlight {
-           background: linear-gradient(135deg, #0b1e33 0%, #162e4e 100%);
-           color: white;
-           padding: 60px;
-           border-radius: 16px;
-           margin-bottom: 60px;
-       }
-
-       .market-highlight h3 {
-           color: var(--accent);
-           font-size: 26px;
-           margin-bottom: 20px;
-           font-weight: 700;
-       }
-
-       .market-highlight p {
-           color: #e2e8f0;
-           font-size: 16px;
-           line-height: 1.8;
-       }
-
-       .specs-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-           gap: 25px;
-       }
-
-       .spec-card {
-           background: white;
-           border-radius: 10px;
-           overflow: hidden;
-           border: 1px solid var(--border-color);
-           box-shadow: 0 4px 15px rgba(0,0,0,0.01);
-           transition: transform 0.3s ease;
-       }
-
-       .spec-card:hover {
-           transform: translateY(-5px);
-       }
-
-       .spec-img {
-           width: 100%;
-           height: 170px;
-           object-fit: cover;
-       }
-
-       .spec-info {
-           padding: 20px;
-           text-align: center;
-           font-weight: 600;
-           color: var(--primary);
-           font-size: 16px;
-       }
-
-       .partners-container {
-           background-color: white;
-           padding: 60px 20px;
-           border-top: 1px solid var(--border-color);
-           border-bottom: 1px solid var(--border-color);
-       }
-
-       .partners-grid-layout {
-           max-width: 1200px;
-           margin: 0 auto;
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-           gap: 30px;
-       }
-
-       .partner-card-box {
-           background: #ffffff;
-           border: 1px solid var(--border-color);
-           border-radius: 12px;
-           padding: 35px 25px;
-           box-shadow: 0 4px 12px rgba(0,0,0,0.01);
-           transition: all 0.3s ease;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-       }
-
-       .partner-card-box:hover {
-           box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-           border-color: var(--accent);
-       }
-
-       .agency-logo-img {
-           height: 60px;
-           width: auto;
-           max-width: 85%;
-           object-fit: contain;
-           margin-bottom: 20px;
-       }
-
-       .agency-info-text {
-           font-size: 15px;
-           font-weight: 700;
-           color: var(--primary);
-           display: flex;
-           align-items: center;
-           gap: 8px;
-           margin-bottom: 12px;
-       }
-
-       .agency-desc {
-           font-size: 13px;
-           color: #6b7280;
-           text-align: center;
-           line-height: 1.6;
-       }
-
-       .flag-icon {
-           width: 20px;
-           height: auto;
-           border-radius: 2px;
-       }
-
-       .founders-section {
-           background-color: #f1f5f9;
-           padding: 100px 20px;
-       }
-
-       .founders-grid {
-           max-width: 950px;
-           margin: 0 auto;
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-           gap: 40px;
-       }
-
-       .founder-card {
-           background: white;
-           border-radius: 14px;
-           box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-           padding: 45px 35px;
-           text-align: center;
-           border: 1px solid var(--border-color);
-       }
-
-       .founder-img {
-           width: 130px;
-           height: 130px;
-           border-radius: 50%;
-           object-fit: cover;
-           margin: 0 auto 25px auto;
-           display: block;
-           border: 3px solid var(--accent);
-       }
-
-       .founder-card h3 {
-           color: var(--primary);
-           font-size: 24px;
-           margin-bottom: 6px;
-       }
-
-       .founder-card .title-tag {
-           color: var(--accent);
-           font-weight: 700;
-           font-size: 13px;
-           text-transform: uppercase;
-           margin-bottom: 20px;
-           letter-spacing: 0.5px;
-       }
-
-       .founder-card p {
-           color: #4b5563;
-           font-size: 14px;
-           line-height: 1.7;
-           margin-bottom: 25px;
-           text-align: justify;
-       }
-
-       .linkedin-btn {
-           display: inline-flex;
-           align-items: center;
-           gap: 8px;
-           background-color: #0077b5;
-           color: white;
-           text-decoration: none;
-           padding: 10px 22px;
-           border-radius: 20px;
-           font-size: 13px;
-           font-weight: 600;
-           transition: background-color 0.3s;
-       }
-
-       .linkedin-btn:hover {
-           background-color: #005582;
-       }
-
-       .cred-badge-container {
-           display: flex;
-           flex-wrap: wrap;
-           gap: 15px;
-           margin-top: 25px;
-           padding-top: 20px;
-           border-top: 1px dashed var(--border-color);
-       }
-
-       .cred-badge {
-           background: #f1f5f9;
-           color: var(--primary);
-           padding: 6px 14px;
-           border-radius: 6px;
-           font-size: 13px;
-           font-weight: 600;
-       }
-
-       footer {
-           background-color: var(--primary);
-           color: white;
-           padding: 80px 20px 40px 20px;
-       }
-
-       .footer-content {
-           max-width: 1200px;
-           margin: 0 auto;
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-           gap: 40px;
-           margin-bottom: 60px;
-       }
-
-       .footer-col h4 {
-           color: var(--accent);
-           font-size: 18px;
-           margin-bottom: 25px;
-           font-weight: 700;
-       }
-
-       .footer-col p, .footer-col li {
-           color: #94a3b8;
-           font-size: 15px;
-           margin-bottom: 12px;
-       }
-
-       .footer-col a {
-           color: white;
-           text-decoration: none;
-           font-weight: 600;
-           transition: color 0.3s;
-       }
-
-       .footer-col a:hover {
-           color: var(--accent);
-       }
-
-       .footer-bottom {
-           max-width: 1200px;
-           margin: 0 auto;
-           text-align: center;
-           padding-top: 30px;
-           border-top: 1px solid #1e3a5f;
-           color: #64748b;
-           font-size: 14px;
-       }
-
-       @media (max-width: 768px) {
-           .nav-links { display: none; }
-           .hero h1 { font-size: 36px; }
-           .corporate-block { padding: 30px; }
-           .market-highlight { padding: 30px; }
-       }
+           --primary: #003366;
+           --secondary: #005088;
+           --text: #475569;
+           --light: #f8fafc;
+           --border: #e2e8f0;
+       }
+
+       * { box-sizing: border-box; margin: 0; padding: 0; }
+       body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.6; background-color: #fff; }
+       h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
+
+       /* Navbar */
+       nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: white; z-index: 1000; }
+       .logo { font-size: 24px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+       .logo span { color: #10b981; }
+       .nav-links { display: flex; list-style: none; gap: 30px; }
+       .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
+       .nav-links a:hover { color: var(--secondary); }
+
+       /* Hero Section */
+       .hero { padding: 100px 8%; background: linear-gradient(135deg, #f1f5f9 0%, #fff 100%); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+       .hero h1 { font-size: 44px; margin-bottom: 20px; line-height: 1.2; }
+       .hero p { font-size: 18px; margin-bottom: 30px; color: var(--text); }
+       .btn { display: inline-block; padding: 15px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: background 0.3s; border: none; cursor: pointer; text-align: center; }
+       .btn:hover { background: var(--secondary); }
+       .hero-img img { width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); object-fit: cover; height: 380px; }
+
+       /* Stats Section */
+       .stats { padding: 60px 8%; background: var(--primary); color: white; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+       .stat-item h3 { font-size: 36px; color: #fff; margin-bottom: 5px; }
+       .stat-item p { color: #cbd5e1; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+
+       /* Sections Main Styling */
+       .section { padding: 80px 8%; }
+       .section-title { text-align: center; margin-bottom: 10px; font-size: 32px; }
+       .section-subtitle { text-align: center; color: #64748b; margin-bottom: 40px; font-size: 16px; max-width: 700px; margin-left: auto; margin-right: auto; }
+       .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; }
+
+       /* Card Custom Styling */
+       .card { background: var(--light); border: 1px solid var(--border); padding: 40px 30px; border-radius: 4px; transition: transform 0.3s; }
+       .card:hover { transform: translateY(-5px); }
+       .card i { font-size: 36px; color: var(--secondary); margin-bottom: 20px; }
+       .card h3 { margin-bottom: 15px; font-size: 20px; }
+       .card p { font-size: 15px; margin-bottom: 20px; color: #64748b; }
+       .card-link { color: var(--secondary); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+
+       /* Table Styling */
+       table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+       th { background: var(--primary); color: white; text-align: left; padding: 15px; font-family: 'DM Sans', sans-serif; }
+       td { padding: 15px; border-bottom: 1px solid var(--border); font-size: 15px; }
+       tr:nth-child(even) { background: var(--light); }
+
+       /* Footer */
+       footer { background: #0f172a; color: #94a3b8; padding: 60px 8% 30px; border-top: 1px solid #1e293b; margin-top: 40px; }
+       .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+       .footer-col h4 { color: white; margin-bottom: 20px; font-size: 16px; }
+       .footer-col p { font-size: 14px; line-height: 1.8; }
+       .footer-col ul { list-style: none; }
+       .footer-col ul li { margin-bottom: 10px; }
+       .footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; text-align: center; font-size: 14px; }
    </style>
 </head>
 <body>
 
-   <!-- Header Navigation -->
-   <header>
-       <nav class="navbar">
-           <a href="#" class="logo-container">
-               <img src="nationalpharmalogo.jpg" alt="National Pharma Logo" class="brand-logo-img">
-               <div class="logo-text">National <span>Pharma</span></div>
-           </a>
-           <ul class="nav-links">
-               <li><a href="#about">Corporate Profile</a></li>
-               <li><a href="#strategy">Strategy & Logistics</a></li>
-               <li><a href="#market">Kuwait Market</a></li>
-               <li><a href="#specialties">Specialties</a></li>
-               <li><a href="#partners">Agencies</a></li>
-               <li><a href="#leadership">Leadership</a></li>
-           </ul>
-       </nav>
-   </header>
+   <nav>
+       <div class="logo"><i class="fa-solid fa-prescription-bottle-medical"></i> National <span>Pharma</span></div>
+       <ul class="nav-links">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="regulatory.html">Regulatory Services</a></li>
+           <li><a href="why-kuwait.html">Why Kuwait?</a></li>
+           <li><a href="#partners">Our Partners</a></li>
+           <li><a href="#contact">Contact</a></li>
+       </ul>
+   </nav>
 
-   <!-- Hero Section -->
    <section class="hero">
-       <div class="badge-2026">Authorized Enterprise | Capital: KWD 500,000</div>
-       <h1>Forging the Future of Healthcare Distribution in Kuwait</h1>
-       <p>A premium W.L.L. medical powerhouse, fully credentialed by the Ministry of Health and Ministry of Commerce, dedicated to delivering global pharmaceutical and biomedical innovations directly to leading clinics and pharmacies.</p>
-       <a href="#about" class="btn">Review Corporate Governance</a>
-   </section>
-
-   <!-- Section: Corporate Profile, Vision, Mission, Values -->
-   <section id="about" class="section">
-       <h2 class="section-title">Corporate <span>Overview</span></h2>
-       <p class="section-subtitle">A sovereign medical distribution entity operating under strict state regulatory approvals.</p>
-
-       <div class="corporate-block">
-           <h3>About National Pharma</h3>
-           <p><strong>National Pharma for Pharmaceutical & Medical Equipment Co. W.L.L.</strong> is a high-tier medical distribution enterprise operating under the strict regulatory frameworks of the Ministry of Commerce & Industry and the Ministry of Health in the State of Kuwait. Established with a solid financial base and an authorized capital of <strong>KWD 500,000</strong> (Commercial Registration No: <strong>483118</strong>), the company stands as a premier gateway for international pharmaceutical and biomedical principles to securely penetrate the highly profitable GCC healthcare ecosystem.</p>
-           <p>We are strategically positioned as an omnichannel distribution force, supplying an extensive network of localized retail pharmacies, private polyclinics (clinics), medical centers, and public hospital divisions across Kuwait. Our core competency lies in handling advanced therapeutics, specialized medical devices, and innovative wellness solutions with flawless execution.</p>
-
-           <div class="cred-badge-container">
-               <div class="cred-badge">🏢 CR No: 483118</div>
-               <div class="cred-badge">💼 Paid-up Capital: 500,000 KWD</div>
-               <div class="cred-badge">⚖️ MOH Approved (No. 266)</div>
-               <div class="cred-badge">🌐 MOCI Licensed (No. 2023/31264)</div>
-           </div>
+       <div>
+           <h1>Trusted Pharmaceutical & Medical Device Distribution Partner in Kuwait</h1>
+           <p>We bridge international life science manufacturers with Kuwait’s healthcare ecosystem through compliance-driven logistics, qualified medical representation, and transparent market access governance.</p>
+           <a href="#contact" class="btn">Become Our Partner</a>
        </div>
-
-       <div class="grid-3" style="margin-top: 40px;">
-           <div class="feature-card">
-               <h4>Corporate Vision</h4>
-               <p>To scale as the most trusted, agile, and compliance-driven pharmaceutical and medical distribution conglomerate in Kuwait, setting the gold standard for how global healthcare innovations are integrated into local clinical frameworks.</p>
-           </div>
-           <div class="feature-card">
-               <h4>Corporate Mission</h4>
-               <p>To empower the medical community of Kuwait by bridging the gap between world-class bio-manufacturers and localized point-of-care clinics and pharmacies, strictly prioritizing patient safety, premium product efficacy, and continuous supply stability.</p>
-           </div>
-           <div class="feature-card">
-               <h4>Corporate Values</h4>
-               <p>Uncompromising integrity, rigorous clinical compliance, absolute transparency, and a deeply entrenched culture of execution excellence across all levels of our localized supply chain operations.</p>
-           </div>
+       <div class="hero-img">
+           <img src="Meeting.jpg" alt="National Pharma Strategic Meeting">
        </div>
    </section>
 
-   <!-- Section: Strategy, Logistics, Distribution & Workforce -->
-   <section id="strategy" class="section" style="background-color: #ffffff; padding: 60px 20px; border-radius: 16px;">
-       <h2 class="section-title">Supply Chain <span>& Infrastructure</span></h2>
-       <p class="section-subtitle">Unlocking elite commercial potential through robust operational mechanics.</p>
+   <section class="stats">
+       <div class="stat-item">
+           <h3>500+</h3>
+           <p>Pharmacies Covered</p>
+       </div>
+       <div class="stat-item">
+           <h3>5 Major</h3>
+           <p>Hospitals Served</p>
+       </div>
+       <div class="stat-item">
+           <h3>15+ Yrs</h3>
+           <p>Staff Average Experience</p>
+       </div>
+       <div class="stat-item">
+           <h3>4 Years</h3>
+           <p>Corporate Legacy</p>
+       </div>
+   </section>
 
-       <div class="grid-2">
-           <div class="feature-card">
-               <h4>Our Strategy</h4>
-               <p>Our go-to-market strategy is centered on deep vertical integration. Rather than adopting a passive distribution role, National Pharma conducts multi-tier product introductions by closely aligning with medical field key opinion leaders (KOLs), deploying rigorous targeted clinical marketing, and building sustainable, recurring procurement accounts within private clinics and retail chains.</p>
+   <section class="section">
+       <h2 class="section-title">Strategic Market Capabilities</h2>
+       <p class="section-subtitle">Comprehensive operational infrastructure designed to accelerate product commercialization across the Kuwaiti market.</p>
+       <div class="grid-3">
+           <div class="card">
+               <i class="fa-solid fa-file-shield"></i>
+               <h3>Regulatory Affairs</h3>
+               <p>Complete regulatory governance spanning MOH registration, product dossiers, pharmacovigilance, and government tender compliance.</p>
+               <a href="regulatory.html" class="card-link">Read Full Strategy &rarr;</a>
            </div>
-           <div class="feature-card">
-               <h4>Logistics & Smart Warehousing</h4>
-               <p>We own and operate state-of-the-art, climate-controlled warehouse facilities that are meticulously vetted and approved by the Ministry of Health. Featuring strict cold-chain management, real-time temperature tracking, and sterile storage conditions, our logistical infrastructure ensures the structural integrity of every pharmaceutical batch and medical tool from initial arrival to final point of delivery.</p>
+           <div class="card">
+               <i class="fa-solid fa-warehouse"></i>
+               <h3>GDP Storage Hub</h3>
+               <p>Fully compliant storage hub operating under strict MOH licensing with complete temperature logging and cold chain monitoring capabilities.</p>
+               <a href="regulatory.html" class="card-link">Explore Facility Setup &rarr;</a>
            </div>
-           <div class="feature-card">
-               <h4>Omnichannel Distribution</h4>
-               <p>National Pharma runs a highly responsive, point-to-point daily distribution matrix covering the entire geography of Kuwait. We bridge our global partners directly into hundreds of operational private clinics, dermatological centers, pediatrics practices, and major pharmacy groups, ensuring rapid fulfillment cycles and optimal stock availability.</p>
-           </div>
-           <div class="feature-card">
-               <h4>The Medical Workforce</h4>
-               <p>Our primary asset is an elite corporate workforce comprising over 25 deeply technical specialists, biopharma representatives, regulatory experts, and high-performance logistics managers. Continuous commercial training ensures our team represents global agencies with maximum medical authority and flawless professionalism.</p>
+           <div class="card">
+               <i class="fa-solid fa-truck-fast"></i>
+               <h3>Logistics & Reach</h3>
+               <p>End-to-end distribution coverage utilizing fully validated temperature-controlled logistics networks supporting daily retail cycles.</p>
+               <a href="regulatory.html" class="card-link">View Logistics Infrastructure &rarr;</a>
            </div>
        </div>
    </section>
 
-   <!-- Section: The Kuwaiti Market Power -->
-   <section id="market" class="section">
-       <div class="market-highlight">
-           <h3>Kuwait: A High-Yield Global Healthcare Hub</h3>
-           <p>The State of Kuwait possesses one of the most affluent and resilient economic profiles worldwide, commanding an exceptional purchasing power backed by massive sovereign capital reserves. On the global stage, the Kuwaiti healthcare sector is internationally recognized for its highly sophisticated consumer base and exceptionally high per capita expenditure on advanced healthcare, medical aesthetics, and innovative therapeutics.</p>
-           <p style="margin-top: 15px;">Private clinics, localized medical institutions, and retail pharmacy chains experience an unrelenting demand for premium, elite-tier international products. This robust financial maturity renders the Kuwaiti market an indispensable, high-yield territory for ambitious global medical manufacturers. Through National Pharma's extensive regulatory compliance and deep corporate placement, our international agencies are perfectly positioned to capture this unparalleled premium market share effectively.</p>
-       </div>
-   </section>
-
-   <!-- Medical Specialties Section -->
-   <section id="specialties" class="section">
-       <h2 class="section-title">Clinical <span>Specialties Covered</span></h2>
-       <p class="section-subtitle">Driving specialized care across vital medical departments in the region.</p>
-
-       <div class="specs-grid">
-           <div class="spec-card">
-               <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80" alt="Gynecology & Obstetrics" class="spec-img">
-               <div class="spec-info">Gynecology & Obstetrics</div>
+   <section class="section" style="background: var(--light);">
+       <div class="grid-3" style="grid-template-columns: 1fr 2fr; gap: 60px; align-items: center; margin-top: 0;">
+           <div>
+               <img src="Cars.jpg" alt="Kuwait Distribution Logistics" style="width:100%; border-radius:4px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
            </div>
-           <div class="spec-card">
-               <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=400&q=80" alt="Pediatrics" class="spec-img">
-               <div class="spec-info">Pediatrics</div>
-           </div>
-           <div class="spec-card">
-               <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80" alt="Dermatology & Aesthetics" class="spec-img">
-               <div class="spec-info">Dermatology & Aesthetics</div>
-           </div>
-           <div class="spec-card">
-               <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80" alt="Urology" class="spec-img">
-               <div class="spec-info">Urology</div>
-           </div>
-           <div class="spec-card">
-               <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=400&q=80" alt="Hematology" class="spec-img">
-               <div class="spec-info">Hematology</div>
-           </div>
-           <div class="spec-card">
-               <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=400&q=80" alt="Chest & Immunology" class="spec-img">
-               <div class="spec-info">Chest & Immunology</div>
+           <div>
+               <h2 style="margin-bottom:15px; font-size:32px;">Market Dynamics & Import Dependence</h2>
+               <p style="margin-bottom:20px; font-size:17px; color:var(--text);">Kuwait presents a highly attractive and modern landscape for foreign healthcare companies, featuring a projected pharmaceutical market scale of US$ 7.2B by 2026, paired with a 90%+ dependence on solid import pipelines.</p>
+               <a href="why-kuwait.html" class="btn" style="background: var(--secondary);">Read Full "Why Kuwait?" Market Report</a>
            </div>
        </div>
    </section>
 
-   <!-- Global Partners Agencies Section with Professional Descriptions -->
-   <section id="partners" style="margin-top: 100px;">
-       <h2 class="section-title">Exclusive International <span>Agencies</span></h2>
-       <p class="section-subtitle">Representing global excellence in biotechnology, formulation science, and clinical manufacturing.</p>
-       <div class="partners-container">
-           <div class="partners-grid-layout">
-
-               <!-- Masenz Danya Group -->
-               <div class="partner-card-box">
-                   <img src="mase.jpg" alt="Masenz Danya Group Logo" class="agency-logo-img">
-                   <div class="agency-info-text">
-                       <img src="https://flagcdn.com/w40/es.png" class="flag-icon" alt="Spain"> Masenz Danya (Spain)
+   <section class="section" id="leadership">
+       <h2 class="section-title">Corporate Governance & Leadership</h2>
+       <p class="section-subtitle">Driven by healthcare executive management with extensive regional expertise and market knowledge.</p>
+       <div class="grid-3" style="grid-template-columns: 1fr 2fr; gap: 60px; align-items: center; margin-top: 0;">
+           <div>
+               <img src="Store.jpg" alt="National Pharma Operations" style="width:100%; border-radius:4px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+           </div>
+           <div>
+               <h3 style="margin-bottom:15px; font-size:24px; color: var(--primary);">15+ Years of Industry Leadership</h3>
+               <p style="margin-bottom:15px;">Our founding core is built upon seasoned healthcare executives holding an average of **over 15 years of individual hands-on experience** within the Kuwaiti and Gulf pharmaceutical sectors.</p>
+               <p style="margin-bottom:20px;">By blending commercial sharpness with strict compliance standards, our leadership guides international manufacturers through complex regulatory pathways and robust market entry frameworks, ensuring a transparent, sustainable, and high-yielding partnership.</p>
+               <div style="display: flex; gap: 20px;">
+                   <div style="background: var(--light); padding: 15px 25px; border-radius: 4px; border: 1px solid var(--border);">
+                       <h4 style="color: var(--secondary); font-size: 16px;">Executive Management</h4>
+                       <p style="font-size: 13px; color: #64748b;">Strategic Growth & Partnerships</p>
                    </div>
-                   <p class="agency-desc">A premium European pharmaceutical conglomerate renowned for synthesizing high-purity medical formulations, advanced neutraceuticals, and innovative therapeutic lines strictly adhering to EU-GMP standards.</p>
-               </div>
-
-               <!-- LC Ingredients -->
-               <div class="partner-card-box">
-                   <img src="ingredients.jpg" alt="LC Ingredients Logo" class="agency-logo-img">
-                   <div class="agency-info-text">
-                       <img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> LC Ingredients (France)
+                   <div style="background: var(--light); padding: 15px 25px; border-radius: 4px; border: 1px solid var(--border);">
+                       <h4 style="color: var(--secondary); font-size: 16px;">Regulatory Governance</h4>
+                       <p style="font-size: 13px; color: #64748b;">MOH Compliance Specialists</p>
                    </div>
-                   <p class="agency-desc">A vanguard French biotechnology lab specializing in pioneering bioactive ingredients, plant-extracted macromolecules, and patent-backed active compounds utilized globally in premium dermo-cosmetic industries.</p>
                </div>
-
-               <!-- Revivogen MD -->
-               <div class="partner-card-box">
-                   <img src="revi.jpg" alt="Revivogen MD Logo" class="agency-logo-img">
-                   <div class="agency-info-text">
-                       <img src="https://flagcdn.com/w40/us.png" class="flag-icon" alt="USA"> Revivogen MD (USA)
-                   </div>
-                   <p class="agency-desc">A clinically validated American dermatological powerhouse engineered by leading hair restoration dermatologists, recognized globally for top-tier medical solutions resolving structural hair thinning and androgenetic alopecia.</p>
-               </div>
-
-               <!-- PROFARMA -->
-               <div class="partner-card-box">
-                   <img src="prof.jpg" alt="PROFARMA Logo" class="agency-logo-img">
-                   <div class="agency-info-text">
-                       <img src="https://flagcdn.com/w40/al.png" class="flag-icon" alt="Albania"> PROFARMA (Albania)
-                   </div>
-                   <p class="agency-desc">A major regional pharmaceutical manufacturer with a legacy of producing essential generics, vital antibiotics, and comprehensive over-the-counter medical treatments matching stringent modern European healthcare guidelines.</p>
-               </div>
-
-               <!-- Geno Scope -->
-               <div class="partner-card-box">
-                   <img src="geno.jpg" alt="Geno Scope Logo" class="agency-logo-img">
-                   <div class="agency-info-text">
-                       <img src="https://flagcdn.com/w40/pl.png" class="flag-icon" alt="Poland"> Geno Scope (Poland)
-                   </div>
-                   <p class="agency-desc">An advanced biomedical laboratory specializing in regenerative medicine, colostrum-based formulations, and innovative tissue-repair science designed to accelerate natural biological healing cycles.</p>
-               </div>
-
-               <!-- Femigien -->
-               <div class="partner-card-box">
-                   <img src="femi.jpg" alt="Femigien Logo" class="agency-logo-img">
-                   <div class="agency-info-text">
-                       <img src="https://flagcdn.com/w40/jo.png" class="flag-icon" alt="Jordan"> Femigien (Jordan)
-                   </div>
-                   <p class="agency-desc">A specialized, trusted Middle Eastern pharmaceutical laboratory deeply focused on gynecological health, delivering high-safety antiseptic washes, therapeutic solutions, and delicate feminine care formulations.</p>
-               </div>
-
            </div>
        </div>
    </section>
 
-   <!-- Executive Leadership Section & Founders Vision -->
-   <section id="leadership" class="founders-section">
-       <h2 class="section-title">Executive <span>Governance</span></h2>
-       <p class="section-subtitle">Steered by industry visionaries executing high-level corporate strategies.</p>
-       <div class="founders-grid">
+   <section class="section" id="partners" style="background: var(--light);">
+       <h2 class="section-title">Current Brand Portfolio</h2>
+       <p class="section-subtitle">Managing exclusive commercial partnerships with global biomedical leaders.</p>
+       <table>
+           <thead>
+               <tr>
+                   <th>Partner Brand</th>
+                   <th>Country of Origin</th>
+                   <th>Product Category</th>
+                   <th>Partnership Framework</th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr>
+                   <td><strong>Dermaroller</strong></td>
+                   <td>Germany</td>
+                   <td>Medical Devices / Aesthetics</td>
+                   <td>Exclusive Distributor</td>
+               </tr>
+               <tr>
+                   <td><strong>The Organic Pharmacy</strong></td>
+                   <td>United Kingdom</td>
+                   <td>Specialized Skincare</td>
+                   <td>Exclusive Distributor</td>
+               </tr>
+               <tr>
+                   <td><strong>Heisign</strong></td>
+                   <td>International</td>
+                   <td>Medical Equipment</td>
+                   <td>Strategic Distribution Partner</td>
+               </tr>
+           </tbody>
+       </table>
+   </section>
 
-           <!-- Ibrahim Hussain -->
-           <div class="founder-card">
-               <img src="ibrahim.jpg" alt="Ibrahim Hussain" class="founder-img">
-               <h3>Ibrahim Hussain</h3>
-               <div class="title-tag">Co-Founder & Managing Director</div>
-               <p><strong>Founders' Vision:</strong> To cement National Pharma as the most agile, regulatory-sound operational vehicle in the GCC, establishing zero-friction entry pathways where global scientific breakthroughs safely align with localized healthcare systems. Ibrahim spearheads our rigorous biomedical compliance, localized clinical affairs, and ensures all logistical structures align with complex Ministry of Health protocols, creating an unbreakable trust matrix with health authorities.</p>
-               <a href="https://www.linkedin.com/in/ibrahim-hussain-986413205" target="_blank" class="linkedin-btn">
-                    Executive LinkedIn 🔗
-               </a>
-           </div>
-
-           <!-- Ali Dashti -->
-           <div class="founder-card">
-               <img src="alidashti.jpg" alt="Ali Dashti" class="founder-img">
-               <h3>Ali Dashti</h3>
-               <div class="title-tag">Co-Founder & Chief Executive Officer</div>
-               <p><strong>Founders' Vision:</strong> To position the company as an institutional market-maker, exploiting the premium purchasing power of the Kuwaiti market to build dominant, high-yield commercial monopolies for our global principles. Ali masterminds the overarching corporate expansion strategy, commands international principal acquisition, and architects our long-term B2B relationships with prominent multi-branch clinics and pharmacy chains.</p>
-               <a href="https://www.linkedin.com/in/ali-dashti-795400127" target="_blank" class="linkedin-btn">
-                    Executive LinkedIn 🔗
-               </a>
-           </div>
-
+   <section class="section" id="contact" style="background: var(--primary); color: white; text-align: center;">
+       <h2 style="color: white; margin-bottom: 15px; font-size: 32px;">Looking for a Trusted Distributor in Kuwait?</h2>
+       <p style="color: #cbd5e1; font-size: 18px; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Leverage our MOH-licensed infrastructure, verified storage facilities, and experienced team of medical representatives to establish your brand presence.</p>
+       <div style="background: white; color: var(--text); padding: 40px; border-radius: 4px; display: inline-block; max-width: 500px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+           <h3 style="margin-bottom: 10px;">Contact Business Development</h3>
+           <p style="margin-bottom: 20px; font-size: 14px; color: #64748b;">Our leadership and dynamic operations team are ready to review your product dossiers.</p>
+           <p style="font-size: 22px; font-weight: 700; color: var(--primary);">bd@nationalpharma.net</p>
        </div>
    </section>
 
-   <!-- Professional Executive Footer -->
-   <footer id="contact">
-       <div class="footer-content">
+   <footer>
+       <div class="footer-grid">
            <div class="footer-col">
-               <h4>National Pharma</h4>
-               <p>A premier W.L.L. corporation specialized in the institutional distribution of high-tier pharmaceuticals, advanced medical equipment, and biotechnology innovations in Kuwait.</p>
-               <p style="margin-top: 15px; font-size: 13px; color: #64748b;">MOCI License: 2023/31264<br>MOH Approval: 266</p>
+               <h4 style="color:white; font-size:18px; margin-bottom:10px;">National Pharma</h4>
+               <p>Trusted Pharmaceutical & Medical Device Distribution Partner in the State of Kuwait. Headquartered in Kuwait City, operating under strict Good Distribution Practices (GDP).</p>
            </div>
            <div class="footer-col">
-               <h4>Corporate Headquarters</h4>
-               <p>State of Kuwait, Kuwait City, Sharq District</p>
-               <p>Jaber Al-Mubarak Street, Injazat Tower, Floor 21</p>
-               <p style="margin-top: 15px;">Official Communications:<br><strong><a href="mailto:info@nationalpharma.net">info@nationalpharma.net</a></strong></p>
+               <h4>Market Access Links</h4>
+               <ul>
+                   <li><a href="regulatory.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Regulatory Services</a></li>
+                   <li><a href="why-kuwait.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Why Kuwait Analysis</a></li>
+               </ul>
            </div>
            <div class="footer-col">
-               <h4>Institutional Banking</h4>
-               <p>Primary Corporate Financial Custodian:<br><strong>National Bank of Kuwait (NBK)</strong></p>
+               <h4>HQ Address</h4>
+               <p>Injazat Tower, Floor 21<br>Kuwait City, State of Kuwait<br>Email: info@nationalpharma.net</p>
            </div>
        </div>
        <div class="footer-bottom">
-           <p>© 2026 National Pharma for Pharmaceutical and Medical Equipment Co. W.L.L. All Rights Reserved.</p>
+           <p>&copy; 2026 National Pharma. All Rights Reserved. Compliant with Kuwait MOH Guidelines.</p>
        </div>
    </footer>
 
