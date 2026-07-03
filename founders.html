@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Our Founders | National Pharma</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&family=Monsieur+La+Douceur&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <style>
+     :root {
+         --primary: #003366;
+         --secondary: #005088;
+         --text: #475569;
+         --light: #f8fafc;
+         --border: #e2e8f0;
+         --linkedin: #0077b5;
+     }
+
+     * { box-sizing: border-box; margin: 0; padding: 0; }
+     body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.6; background-color: #fff; }
+     h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
+
+     /* Navbar */
+     nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: white; z-index: 1000; }
+     .logo-container { display: flex; align-items: center; }
+     .logo-img { height: 55px; width: auto; object-fit: contain; }
+     .nav-links { display: flex; list-style: none; gap: 30px; }
+     .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
+     .nav-links a:hover { color: var(--secondary); }
+
+     /* Header Section */
+     .page-header { background: linear-gradient(135deg, #f1f5f9 0%, #fff 100%); padding: 60px 8%; text-align: center; border-bottom: 1px solid var(--border); }
+     .page-header h1 { font-size: 36px; margin-bottom: 10px; }
+     .page-header p { color: #64748b; font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+     /* Founders Section Container */
+     .founders-container { padding: 80px 8%; display: flex; flex-direction: column; gap: 80px; }
+
+     /* Founder Row Box */
+     .founder-row { display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start; }
+
+     /* Image & Title Styling */
+     .founder-sidebar { text-align: center; }
+     .founder-img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 4px solid var(--light); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+     .founder-name-container { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 5px; }
+     .founder-sidebar h3 { font-size: 24px; color: var(--primary); }
+     .linkedin-icon { color: var(--linkedin); font-size: 20px; transition: color 0.3s, transform 0.3s; display: inline-block; }
+     .linkedin-icon:hover { color: var(--primary); transform: scale(1.15); }
+
+     .founder-sidebar .title-tag { font-size: 14px; color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+     /* Content Area */
+     .founder-bio { display: flex; flex-direction: column; gap: 20px; }
+     .founder-bio p { font-size: 16px; color: var(--text); text-align: justify; }
+
+     /* Message Styling */
+     .founder-message-box { background-color: var(--light); border-left: 4px solid var(--primary); padding: 30px; border-radius: 0 4px 4px 0; margin-top: 10px; }
+     .founder-message-box h4 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 10px; font-family: 'DM Sans', sans-serif; }
+     .handwritten-text { font-family: 'Monsieur La Douceur', cursive; font-size: 34px; line-height: 1.2; color: #1e293b; font-weight: 400; word-spacing: 2px; }
+
+     /* Footer */
+     footer { background: #0f172a; color: #94a3b8; padding: 60px 8% 30px; border-top: 1px solid #1e293b; margin-top: 60px; }
+     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+     .footer-col h4 { color: white; margin-bottom: 20px; font-size: 16px; }
+     .footer-col p { font-size: 14px; line-height: 1.8; }
+     .footer-col ul { list-style: none; }
+     .footer-col ul li { margin-bottom: 10px; }
+     .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+     .footer-col ul li a:hover { color: white; }
+     .footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; text-align: center; font-size: 14px; }
+
+     /* Responsive Rules */
+     @media (max-width: 1024px) {
+         nav, .page-header, .founders-container, footer { padding-left: 4%; padding-right: 4%; }
+         .founder-row { gap: 40px; grid-template-columns: 240px 1fr; }
+     }
+
+     @media (max-width: 768px) {
+         nav { flex-direction: column; gap: 15px; text-align: center; }
+         .nav-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+
+         .founder-row { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+         .founder-bio p { text-align: center; }
+
+         .founder-message-box { border-left: none; border-top: 4px solid var(--primary); text-align: center; padding: 20px; }
+         .handwritten-text { font-size: 30px; }
+
+         .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+     }
+
+     @media (max-width: 480px) {
+         .page-header h1 { font-size: 28px; }
+         .founder-img { width: 180px; height: 180px; }
+         .handwritten-text { font-size: 26px; }
+     }
+ </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+ <nav>
+     <a href="index.html" class="logo-container">
+         <img src="nationalpharmalogo.jpg" alt="National Pharma Logo" class="logo-img">
+     </a>
+     <ul class="nav-links">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="regulatory.html">Regulatory Services</a></li>
+         <li><a href="why-kuwait.html">Why Kuwait?</a></li>
+         <li><a href="founders.html" style="color: var(--secondary); font-weight:700;">Founders</a></li>
+         <li><a href="index.html#partners">Our Partners</a></li>
+         <li><a href="index.html#contact">Contact</a></li>
+     </ul>
+ </nav>
+
+ <!-- Page Header -->
+ <header class="page-header">
+     <h1>Corporate Governance & Founders</h1>
+     <p>The leadership driving National Pharma's commitment to strategic healthcare growth and strict regulatory excellence in the State of Kuwait.</p>
+ </header>
+
+ <!-- Founders Container -->
+ <main class="founders-container">
+
+     <!-- Founder 1: Ali Dashti -->
+     <section class="founder-row">
+         <div class="founder-sidebar">
+             <img src="alidashti.jpg" alt="Ali Dashti" class="founder-img">
+             <div class="founder-name-container">
+                 <h3>Ali Dashti</h3>
+                 <a href="https://www.linkedin.com/in/ali-dashti-795400127?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="linkedin-icon">
+                     <i class="fa-brands fa-linkedin"></i>
+                 </a>
+             </div>
+             <div class="title-tag">Co-Founder & Executive Director</div>
+         </div>
+         <div class="founder-bio">
+             <p>Ali H. Dashti is an entrepreneur and investor with extensive experience in founding, developing, and leading businesses across various industries. He is committed to driving sustainable growth through business development, corporate expansion, and the establishment of strategic partnerships.</p>
+             <p>Ali has a strong ability to identify promising investment opportunities and transform them into successful, sustainable ventures, with a focus on strengthening corporate governance, fostering innovation, and creating long-term value. Through his entrepreneurial vision and leadership, he continues to contribute to strengthening National Pharma's position in the healthcare sector while supporting its mission to provide high-quality pharmaceutical products, medical devices, healthcare solutions, and exceptional services that meet the needs of customers and partners.</p>
+
+             <div class="founder-message-box">
+                 <h4>Founder's Vision</h4>
+                 <div class="handwritten-text">
+                   "At National Pharma, our expansion is driven by a clear entrepreneurial vision: to transform high-potential healthcare opportunities into sustainable, value-creating realities. We believe that true corporate leadership is achieved by fostering innovation and establishing strong, strategic alliances. Our commitment is to continually strengthen our corporate governance and market position, ensuring that National Pharma remains the partner of choice for those seeking to deliver exceptional, high-quality healthcare solutions to the State of Kuwait."
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- Founder 2: Ibrahim Hussain -->
+     <section class="founder-row">
+         <div class="founder-sidebar">
+             <img src="ibrahim.jpg" alt="Ibrahim Hussain" class="founder-img">
+             <div class="founder-name-container">
+                 <h3>Ibrahim Hussain</h3>
+                 <a href="https://www.linkedin.com/in/ibrahim-hussain-986413205?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="linkedin-icon">
+                     <i class="fa-brands fa-linkedin"></i>
+                 </a>
+             </div>
+             <div class="title-tag">Co-Founder & General Manager</div>
+         </div>
+         <div class="founder-bio">
+             <p>Ibrahim is the Co-Founder and General Manager of the company, bringing over 15 years of experience in the pharmaceutical, medical equipment, and medical supplies industry.</p>
+             <p>He has extensive expertise in business development, commercial operations, and working closely with the Ministry of Health, as well as public and private hospitals. He has built strong professional relationships across the healthcare sector and possesses in-depth knowledge of regulatory requirements, procurement processes, and the medical market. His experience and industry network play a key role in supporting the company’s growth and strengthening its position in the healthcare sector.</p>
+
+             <div class="founder-message-box">
+                 <h4>Manager's Message</h4>
+                 <div class="handwritten-text">
+                   "Sustainable growth in the pharmaceutical and medical device sector requires more than market presence—it demands deep-rooted industry relationships and an absolute alignment with regulatory standards. Having spent over 15 years working closely with the Ministry of Health and the wider medical market, my focus is to ensure our operations transition seamlessly from high-level procurement to effective public and private sector delivery. We bridge the gap between global healthcare supply and Kuwait's local demand with reliability and expertise."
+                 </div>
+             </div>
+         </div>
+     </section>
+
+ </main>
+
+ <!-- Footer -->
+ <footer>
+     <div class="footer-grid">
+         <div class="footer-col">
+             <h4 style="color:white; font-size:18px; margin-bottom:10px;">National Pharma</h4>
+             <p>Trusted Pharmaceutical & Medical Device Distribution Partner in the State of Kuwait. Headquartered in Kuwait City, operating under strict Good Distribution Practices (GDP).</p>
+         </div>
+         <div class="footer-col">
+             <h4>Market Access Links</h4>
+             <ul>
+                 <li><a href="regulatory.html">Regulatory Services</a></li>
+                 <li><a href="why-kuwait.html">Why Kuwait Analysis</a></li>
+                 <li><a href="founders.html">Founders & Leadership</a></li>
+             </ul>
+         </div>
+         <div class="footer-col">
+             <h4>HQ Address</h4>
+             <p>Injazat Tower, Floor 21<br>Kuwait City, State of Kuwait<br>Email: info@nationalpharma.net</p>
+         </div>
+     </div>
+     <div class="footer-bottom">
+         <p>&copy; 2026 National Pharma. All Rights Reserved. Compliant with Kuwait MOH Guidelines.</p>
+     </div>
+ </footer>
+
+</body>
+</html>
