@@ -1,141 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Regulatory Affairs & Compliance | National Pharma</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-   <style>
-       :root {
-           --primary: #003366;
-           --secondary: #005088;
-           --text: #475569;
-           --light: #f8fafc;
-           --border: #e2e8f0;
-       }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Regulatory Affairs & GDP Logistics | National Pharma</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <style>
+     :root {
+         --primary: #003366;
+         --secondary: #005088;
+         --text: #475569;
+         --light: #f8fafc;
+         --border: #e2e8f0;
+     }
 
-       * { box-sizing: border-box; margin: 0; padding: 0; }
-       body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.6; background-color: #fff; }
-       h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
+     * { box-sizing: border-box; margin: 0; padding: 0; }
+     body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.6; background-color: #fff; }
+     h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
 
-       /* Navbar */
-       nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: white; z-index: 1000; }
-       .logo-img { height: 55px; width: auto; object-fit: contain; }
-       .nav-links { display: flex; list-style: none; gap: 30px; }
-       .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
-       .nav-links a:hover { color: var(--secondary); }
+     /* Navbar Style */
+     nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: white; z-index: 1000; }
+     .logo-container { display: flex; align-items: center; }
+     .logo-img { height: 55px; width: auto; object-fit: contain; }
+     .nav-links { display: flex; list-style: none; gap: 30px; }
+     .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
+     .nav-links a:hover { color: var(--secondary); }
 
-       /* Banner */
-       .page-banner { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 80px 8%; text-align: center; }
-       .page-banner h1 { color: white; font-size: 38px; margin-bottom: 15px; }
-       .page-banner p { color: #cbd5e1; font-size: 18px; max-width: 800px; margin: 0 auto; }
+     /* Page Header Style */
+     .page-header { background: linear-gradient(135deg, #f1f5f9 0%, #fff 100%); padding: 60px 8%; text-align: center; border-bottom: 1px solid var(--border); }
+     .page-header h1 { font-size: 36px; margin-bottom: 10px; }
+     .page-header p { color: #64748b; font-size: 16px; max-width: 700px; margin: 0 auto; }
 
-       /* Content Sections */
-       .section { padding: 60px 8%; }
-       .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+     /* Infrastructure Layout Style */
+     .section { padding: 80px 8%; }
+     .section-title { text-align: center; margin-bottom: 10px; font-size: 32px; }
+     .section-subtitle { text-align: center; color: #64748b; margin-bottom: 50px; font-size: 16px; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-       .spec-list { list-style: none; margin-top: 20px; }
-       .spec-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; }
-       .spec-list i { color: var(--secondary); margin-top: 5px; }
+     .capability-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+     .capability-row:nth-child(even) { direction: rtl; }
+     .capability-row:nth-child(even) .capability-text { direction: ltr; }
 
-       /* Footer */
-       footer { background: #0f172a; color: #94a3b8; padding: 60px 8% 30px; border-top: 1px solid #1e293b; margin-top: 60px; }
-       .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
-       .footer-col h4 { color: white; margin-bottom: 20px; font-size: 16px; }
-       .footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; text-align: center; font-size: 14px; }
-   </style>
+     .capability-img img { width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); object-fit: cover; height: 350px; }
+     .capability-text h3 { font-size: 26px; margin-bottom: 20px; color: var(--primary); }
+     .capability-text p { margin-bottom: 15px; font-size: 16px; text-align: justify; }
+
+     .feature-list { list-style: none; margin-top: 20px; }
+     .feature-list li { display: flex; align-items: start; gap: 12px; margin-bottom: 12px; font-size: 15px; }
+     .feature-list li i { color: var(--secondary); margin-top: 5px; }
+
+     /* Footer Section */
+     footer { background: #0f172a; color: #94a3b8; padding: 60px 8% 30px; border-top: 1px solid #1e293b; }
+     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+     .footer-col h4 { color: white; margin-bottom: 20px; font-size: 16px; }
+     .footer-col p { font-size: 14px; line-height: 1.8; }
+     .footer-col ul { list-style: none; }
+     .footer-col ul li { margin-bottom: 10px; }
+     .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+     .footer-col ul li a:hover { color: white; }
+     .footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; text-align: center; font-size: 14px; }
+
+     /* Responsive Rules for Mobile and Tablet Viewports */
+     @media (max-width: 1024px) {
+         nav, .page-header, .section, footer { padding-left: 4%; padding-right: 4%; }
+         .capability-row { gap: 40px; }
+     }
+
+     @media (max-width: 768px) {
+         nav { flex-direction: column; gap: 15px; text-align: center; }
+         .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+         .capability-row, .capability-row:nth-child(even) { grid-template-columns: 1fr; gap: 30px; direction: ltr; }
+         .capability-text { text-align: center; }
+         .capability-text p { text-align: center; }
+         .feature-list li { justify-content: center; text-align: left; }
+         .capability-img img { height: 260px; }
+
+         .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+         .section-title { font-size: 26px; }
+     }
+
+     @media (max-width: 480px) {
+         .page-header h1 { font-size: 26px; }
+         .capability-text h3 { font-size: 22px; }
+     }
+ </style>
 </head>
 <body>
 
-   <nav>
-       <a href="index.html" class="logo-container">
-           <img src="nationalpharmalogo.jpg" alt="National Pharma Logo" class="logo-img">
-       </a>
-       <ul class="nav-links">
-           <li><a href="index.html">Home</a></li>
-           <li><a href="regulatory.html" style="color: var(--secondary);">Regulatory Services</a></li>
-           <li><a href="why-kuwait.html">Why Kuwait?</a></li>
-           <li><a href="index.html#partners">Our Partners</a></li>
-           <li><a href="index.html#contact">Contact</a></li>
-       </ul>
-   </nav>
+ <!-- Navigation Bar -->
+ <nav>
+     <a href="index.html" class="logo-container">
+         <img src="nationalpharmalogo.jpg" alt="National Pharma Logo" class="logo-img">
+     </a>
+     <ul class="nav-links">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="regulatory.html" style="color: var(--secondary); font-weight:700;">Regulatory Services</a></li>
+         <li><a href="why-kuwait.html">Why Kuwait?</a></li>
+         <li><a href="founders.html">Founders</a></li>
+         <li><a href="index.html#partners">Our Partners</a></li>
+         <li><a href="index.html#contact">Contact</a></li>
+     </ul>
+ </nav>
 
-   <div class="page-banner">
-       <h1>Regulatory Affairs & MOH Governance</h1>
-       <p>Strategic, compliance-driven framework designed to streamline Ministry of Health approvals and product commercialization pathways in Kuwait.</p>
-   </div>
+ <!-- Header Section -->
+ <header class="page-header">
+     <h1>Regulatory Services & Market Infrastructure</h1>
+     <p>Providing seamless paths to market entrance through comprehensive Ministry of Health governance, certified GDP operations, and structured cold-chain commercial logistics.</p>
+ </header>
 
-   <section class="section">
-       <div class="grid-2">
-           <div>
-               <h2>MOH Registration Strategy</h2>
-               <p style="margin-top: 15px;">Navigating the Kuwait Ministry of Health (MOH) infrastructure requires deep regulatory expertise and clear, compliance-driven data handling. National Pharma acts as your localized legal and regulatory gateway, ensuring precise execution from dossier submission to full commercial licensing.</p>
+ <!-- Core Capabilities Infrastructure -->
+ <main class="section">
+     <h2 class="section-title">Operational Infrastructure</h2>
+     <p class="section-subtitle">A meticulously governed framework ensures your products navigate statutory approvals smoothly and reach delivery points flawlessly.</p>
 
-               <ul class="spec-list">
-                   <li><i class="fa-solid fa-circle-check"></i> <div><strong>Dossier Management:</strong> Comprehensive compilation, review, and optimization of CTD/eCTD dossiers aligned with specific Kuwaiti pharmaceutical standards.</div></li>
-                   <li><i class="fa-solid fa-circle-check"></i> <div><strong>Pricing Strategy Support:</strong> Experienced coordination with MOH pricing committees to balance regional compliance and commercial viability.</div></li>
-                   <li><i class="fa-solid fa-circle-check"></i> <div><strong>Pharmacovigilance (PV):</strong> Setup of proactive local safety monitoring, immediate adverse event reporting pipelines, and fully aligned risk mitigation plans.</div></li>
-               </ul>
-           </div>
-           <div>
-               <img src="meeting.jpg" alt="Regulatory Briefing" style="width: 100%; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-           </div>
-       </div>
-   </section>
+     <!-- Row 1: Regulatory Affairs -->
+     <div class="capability-row">
+         <div class="capability-img">
+             <img src="meeting.jpg" alt="Regulatory Compliance Governance">
+         </div>
+         <div class="capability-text">
+             <h3>Ministry of Health (MOH) Governance</h3>
+             <p>Our regulatory team manages extensive pharmaceutical dossiers, biomedical listings, and consumer healthcare submissions. We guarantee that complex validation tasks comply with the strict, updated protocols mandated by the State of Kuwait.</p>
+             <ul class="feature-list">
+                 <li><i class="fa-solid fa-circle-check"></i> Complete local agent representation & administrative filing.</li>
+                 <li><i class="fa-solid fa-circle-check"></i> Post-market surveillance, reporting, and pharmacovigilance setup.</li>
+                 <li><i class="fa-solid fa-circle-check"></i> Active tender analysis for government and public hospital sectors.</li>
+             </ul>
+         </div>
+     </div>
 
-   <section class="section" style="background: var(--light);">
-       <div class="grid-2" style="grid-template-columns: 1fr 1.2fr;">
-           <div>
-               <img src="store.jpg" alt="GDP Storage Hub" style="width: 100%; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-           </div>
-           <div>
-               <h2>GDP Storage Hub & Infrastructure</h2>
-               <p style="margin-top: 15px; margin-bottom: 20px;">Our specialized warehousing infrastructure functions under direct MOH licensing and operates under strict Good Distribution Practices (GDP). We secure complete asset protection for sensitive biomedical lines.</p>
+     <!-- Row 2: GDP Storage Hub -->
+     <div class="capability-row">
+         <div class="capability-img">
+             <img src="store.jpg" alt="GDP Storage Facility">
+         </div>
+         <div class="capability-text">
+             <h3>Licensed Good Distribution Practice (GDP) Hub</h3>
+             <p>Our operational storage core functions under explicit licenses from the Ministry of Health, conforming entirely to regional guidelines. Your pharmaceutical assets and specialized medical devices are preserved in environments optimized for quality assurance.</p>
+             <ul class="feature-list">
+                 <li><i class="fa-solid fa-circle-check"></i> Continuous temperature recording with active multi-zone climate automation.</li>
+                 <li><i class="fa-solid fa-circle-check"></i> Specialized cold chain spaces dedicated to sensitive biologics and vaccines.</li>
+                 <li><i class="fa-solid fa-circle-check"></i> Inventory traceability governed by advanced batch and expiration logging.</li>
+             </ul>
+         </div>
+     </div>
 
-               <div style="background: white; padding: 20px; border-radius: 4px; border: 1px solid var(--border); margin-bottom: 15px;">
-                   <h4><i class="fa-solid fa-temperature-arrow-down" style="color: var(--secondary); margin-right: 10px;"></i> Cold Chain Infrastructure</h4>
-                   <p style="font-size: 14px; margin-top: 5px; color: #64748b;">Fully integrated, redundant continuous cooling infrastructure supporting sensitive bio-pharmaceutical storage conditions (2°C to 8°C).</p>
-               </div>
+     <!-- Row 3: Logistics & Fleet -->
+     <div class="capability-row">
+         <div class="capability-img">
+             <img src="cars.jpg" alt="Distribution Fleet Logistics">
+         </div>
+         <div class="capability-text">
+             <h3>Temperature-Controlled Delivery Network</h3>
+             <p>National Pharma maintains a dedicated logistics fleet composed of validated, climate-stabilized vehicles. We ensure the therapeutic integrity of your lines across the last mile, executing daily deliveries to public institutions, private healthcare networks, and retail clinics.</p>
+             <ul class="feature-list">
+                 <li><i class="fa-solid fa-circle-check"></i> Full geographic access covering medical centers and pharmacies in Kuwait.</li>
+                 <li><i class="fa-solid fa-circle-check"></i> Verified emergency routing protocols ensuring immediate, on-demand dispatch.</li>
+                 <li><i class="fa-solid fa-circle-check"></i> Chain-of-custody tracking verifying compliance from warehouse to final delivery.</li>
+             </ul>
+         </div>
+     </div>
+ </main>
 
-               <div style="background: white; padding: 20px; border-radius: 4px; border: 1px solid var(--border);">
-                   <h4><i class="fa-solid fa-shield-halved" style="color: var(--secondary); margin-right: 10px;"></i> Secure Inventory Audits</h4>
-                   <p style="font-size: 14px; margin-top: 5px; color: #64748b;">Real-time automated environmental status monitoring, continuous logging systems, and rigid security barriers protecting high-value medical device configurations.</p>
-               </div>
-           </div>
-       </div>
-   </section>
-
-   <section class="section" style="text-align: center; background: var(--primary); color: white;">
-       <h2 style="color: white; margin-bottom: 15px;">Accelerate Your Regulatory Path</h2>
-       <p style="color: #cbd5e1; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Connect directly with our regulatory specialists and operations team to initiate product evaluation pipelines.</p>
-       <p style="font-size: 24px; font-weight: 700; color: white;">info@nationalpharma.net</p>
-   </section>
-
-   <footer>
-       <div class="footer-grid">
-           <div class="footer-col">
-               <h4 style="color:white; font-size:18px; margin-bottom:10px;">National Pharma</h4>
-               <p>Trusted Pharmaceutical & Medical Device Distribution Partner in the State of Kuwait. Operating under strict Good Distribution Practices (GDP).</p>
-           </div>
-           <div class="footer-col">
-               <h4>Market Access Links</h4>
-               <ul>
-                   <li><a href="regulatory.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Regulatory Services</a></li>
-                   <li><a href="why-kuwait.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Why Kuwait Analysis</a></li>
-               </ul>
-           </div>
-           <div class="footer-col">
-               <h4>HQ Address</h4>
-               <p>Injazat Tower, Floor 21<br>Kuwait City, State of Kuwait<br>Email: info@nationalpharma.net</p>
-           </div>
-       </div>
-       <div class="footer-bottom">
-           <p>&copy; 2026 National Pharma. All Rights Reserved. Compliant with Kuwait MOH Guidelines.</p>
-       </div>
-   </footer>
+ <!-- Footer Section -->
+ <footer>
+     <div class="footer-grid">
+         <div class="footer-col">
+             <h4 style="color:white; font-size:18px; margin-bottom:10px;">National Pharma</h4>
+             <p>Trusted Pharmaceutical & Medical Device Distribution Partner in the State of Kuwait. Headquartered in Kuwait City, operating under strict Good Distribution Practices (GDP).</p>
+         </div>
+         <div class="footer-col">
+             <h4>Market Access Links</h4>
+             <ul>
+                 <li><a href="regulatory.html">Regulatory Services</a></li>
+                 <li><a href="why-kuwait.html">Why Kuwait Analysis</a></li>
+                 <li><a href="founders.html">Founders & Leadership</a></li>
+             </ul>
+         </div>
+         <div class="footer-col">
+             <h4>HQ Address</h4>
+             <p>Injazat Tower, Floor 21<br>Kuwait City, State of Kuwait<br>Email: info@nationalpharma.net</p>
+         </div>
+     </div>
+     <div class="footer-bottom">
+         <p>&copy; 2026 National Pharma. All Rights Reserved. Compliant with Kuwait MOH Guidelines.</p>
+     </div>
+ </footer>
 
 </body>
 </html>
