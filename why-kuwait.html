@@ -1,118 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Why Kuwait? Market Access Analysis | National Pharma</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-   <style>
-       :root { --primary: #003366; --secondary: #005088; --text: #475569; --light: #f8fafc; --border: #e2e8f0; }
-       * { box-sizing: border-box; margin: 0; padding: 0; }
-       body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.6; }
-       h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Why Kuwait? Healthcare Market Analysis | National Pharma</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ <style>
+     :root {
+         --primary: #003366;
+         --secondary: #005088;
+         --text: #475569;
+         --light: #f8fafc;
+         --border: #e2e8f0;
+     }
 
-       /* Navbar */
-       nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; border-bottom: 1px solid var(--border); background: white; position: sticky; top: 0; z-index: 1000; }
-       .logo-img { height: 55px; width: auto; object-fit: contain; }
-       .nav-links { display: flex; list-style: none; gap: 30px; }
-       .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; }
-       .nav-links a:hover { color: var(--secondary); }
+     * { box-sizing: border-box; margin: 0; padding: 0; }
+     body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.6; background-color: #fff; }
+     h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
 
-       /* Banner */
-       .header-banner { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 80px 8%; text-align: center; }
-       .header-banner h1 { color: white; font-size: 38px; margin-bottom: 15px; }
+     /* Navbar Style */
+     nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: white; z-index: 1000; }
+     .logo-container { display: flex; align-items: center; }
+     .logo-img { height: 55px; width: auto; object-fit: contain; }
+     .nav-links { display: flex; list-style: none; gap: 30px; }
+     .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
+     .nav-links a:hover { color: var(--secondary); }
 
-       /* Layout */
-       .section { padding: 60px 8%; }
-       .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px; align-items: center; }
-       .stat-card { background: var(--light); border: 1px solid var(--border); padding: 30px; border-radius: 4px; margin-bottom: 20px; }
-       .stat-card h3 { font-size: 32px; color: var(--secondary); margin-bottom: 5px; }
-       .stat-card p { font-size: 15px; color: var(--text); font-weight: 500; }
+     /* Page Header Style */
+     .page-header { background: linear-gradient(135deg, #f1f5f9 0%, #fff 100%); padding: 60px 8%; text-align: center; border-bottom: 1px solid var(--border); }
+     .page-header h1 { font-size: 36px; margin-bottom: 10px; }
+     .page-header p { color: #64748b; font-size: 16px; max-width: 700px; margin: 0 auto; }
 
-       /* Footer */
-       footer { background: #0f172a; color: #94a3b8; padding: 60px 8% 30px; border-top: 1px solid #1e293b; margin-top: 60px; }
-       .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
-       .footer-col h4 { color: white; margin-bottom: 20px; font-size: 16px; }
-       .footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; text-align: center; font-size: 14px; }
-   </style>
+     /* Main Layout Style */
+     .container { padding: 80px 8%; }
+     .section-title { text-align: center; font-size: 32px; margin-bottom: 10px; }
+     .section-subtitle { text-align: center; color: #64748b; margin-bottom: 50px; font-size: 16px; }
+
+     /* Core Pillars Grid */
+     .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 80px; }
+     .pillar-card { background: var(--light); padding: 40px; border-radius: 4px; border-top: 4px solid var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+     .pillar-icon { font-size: 36px; color: var(--secondary); margin-bottom: 20px; }
+     .pillar-card h3 { font-size: 22px; margin-bottom: 15px; }
+     .pillar-card p { font-size: 15px; color: var(--text); text-align: justify; }
+
+     /* Sector Channels Section */
+     .channels-section { background-color: var(--light); padding: 80px 8%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+     .channels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px; }
+     .channel-box { background: white; padding: 40px; border-radius: 4px; border: 1px solid var(--border); }
+     .channel-box h3 { font-size: 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+     .channel-box h3 i { color: var(--secondary); font-size: 18px; }
+     .channel-box p { font-size: 15px; text-align: justify; }
+
+     /* Corporate Partnership Statement */
+     .partnership-box { max-width: 900px; margin: 80px auto 0; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 50px; border-radius: 4px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,51,0.15); }
+     .partnership-box h3 { color: white; font-size: 26px; margin-bottom: 20px; }
+     .partnership-box p { font-size: 16px; line-height: 1.8; font-style: italic; opacity: 0.95; }
+
+     /* Footer Section */
+     footer { background: #0f172a; color: #94a3b8; padding: 60px 8% 30px; border-top: 1px solid #1e293b; }
+     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+     .footer-col h4 { color: white; margin-bottom: 20px; font-size: 16px; }
+     .footer-col p { font-size: 14px; line-height: 1.8; }
+     .footer-col ul { list-style: none; }
+     .footer-col ul li { margin-bottom: 10px; }
+     .footer-col ul li a { color: #94a3b8; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+     .footer-col ul li a:hover { color: white; }
+     .footer-bottom { border-top: 1px solid #1e293b; padding-top: 30px; text-align: center; font-size: 14px; }
+
+     /* Responsive Media Queries for Tablets and Mobile Devices */
+     @media (max-width: 1024px) {
+         nav, .page-header, .container, .channels-section, footer { padding-left: 4%; padding-right: 4%; }
+         .pillars-grid, .channels-grid { gap: 30px; }
+     }
+
+     @media (max-width: 768px) {
+         nav { flex-direction: column; gap: 15px; text-align: center; }
+         .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+         .pillars-grid, .channels-grid { grid-template-columns: 1fr; gap: 25px; }
+
+         .pillar-card, .channel-box { padding: 30px; text-align: center; }
+         .pillar-card p, .channel-box p { text-align: center; }
+         .channel-box h3 { justify-content: center; }
+
+         .partnership-box { padding: 30px; }
+         .partnership-box h3 { font-size: 22px; }
+         .partnership-box p { font-size: 15px; }
+
+         .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+         .section-title { font-size: 26px; }
+     }
+
+     @media (max-width: 480px) {
+         .page-header h1 { font-size: 26px; }
+         .pillar-card h3 { font-size: 19px; }
+     }
+ </style>
 </head>
 <body>
 
-   <nav>
-       <a href="index.html" class="logo-container">
-           <img src="nationalpharmalogo.jpg" alt="National Pharma Logo" class="logo-img">
-       </a>
-       <ul class="nav-links">
-           <li><a href="index.html">Home</a></li>
-           <li><a href="regulatory.html">Regulatory Services</a></li>
-           <li><a href="why-kuwait.html" style="color: var(--secondary);">Why Kuwait?</a></li>
-           <li><a href="index.html#partners">Our Partners</a></li>
-           <li><a href="index.html#contact">Contact</a></li>
-       </ul>
-   </nav>
+ <!-- Navigation Bar -->
+ <nav>
+     <a href="index.html" class="logo-container">
+         <img src="nationalpharmalogo.jpg" alt="National Pharma Logo" class="logo-img">
+     </a>
+     <ul class="nav-links">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="regulatory.html">Regulatory Services</a></li>
+         <li><a href="why-kuwait.html" style="color: var(--secondary); font-weight:700;">Why Kuwait?</a></li>
+         <li><a href="founders.html">Founders</a></li>
+         <li><a href="index.html#partners">Our Partners</a></li>
+         <li><a href="index.html#contact">Contact</a></li>
+     </ul>
+ </nav>
 
-   <div class="header-banner">
-       <h1>Why the Kuwaiti Healthcare Market?</h1>
-       <p>A strategic analysis of high-value regional dynamics, growth indices, and investment infrastructure for international manufacturers.</p>
-   </div>
+ <!-- Header Section -->
+ <header class="page-header">
+     <h1>Why Kuwait? Healthcare Market Analysis</h1>
+     <p>An attractive, high-growth hub for international pharmaceutical and medical device manufacturers, driven by strategic vision, robust public investment, and high import reliance.</p>
+ </header>
 
-   <section class="section">
-       <div class="market-grid">
-           <div>
-               <h2>Macro Economic Indicators</h2>
-               <p style="margin-top: 15px; margin-bottom: 25px; font-size: 16px;">The State of Kuwait features one of the most stable and high-spending healthcare models within the GCC matrix, heavily supported by dedicated public infrastructure development strategies.</p>
+ <!-- Market Strategic Pillars -->
+ <main class="container">
+     <h2 class="section-title">Strategic Market Pillars</h2>
+     <p class="section-subtitle">Understanding the foundational strengths and commercial drivers within the Kuwaiti life sciences sector.</p>
 
-               <div class="stat-card">
-                   <h3>US$ 10.0 Billion</h3>
-                   <p>Total Government Healthcare Budget Allocation</p>
-               </div>
-               <div class="stat-card">
-                   <h3>US$ 7.2 Billion</h3>
-                   <p>Projected Pharmaceutical & Device Market Size by 2026</p>
-               </div>
-               <div class="stat-card">
-                   <h3>90% +</h3>
-                   <p>Dependence on Foreign Imports for Specialized Medical Supply Chains</p>
-               </div>
-           </div>
-           <div>
-               <h3 style="font-size:24px; margin-bottom:15px;">Key Market Drivers</h3>
-               <ul style="margin-left: 20px; margin-bottom: 30px; color: #64748b; font-size: 15px;">
-                   <li style="margin-bottom: 12px;"><strong>High Per Capita Spending:</strong> Kuwait maintains an exceptional per capita healthcare investment index, ensuring a constant demand for innovative premium treatments and device portfolios.</li>
-                   <li style="margin-bottom: 12px;"><strong>Demographic Shifts:</strong> A steady rise in population density, combined with a growing aging demographic, accelerates public demands for modern therapeutic options.</li>
-                   <li style="margin-bottom: 12px;"><strong>Infrastructure Modernization:</strong> Over 20 mega hospital extension and construction projects currently backed by the Ministry of Health to expand operational bed capacities.</li>
-               </ul>
-               <h3 style="font-size:24px; margin-bottom:15px;">Strategic Entry Alignment</h3>
-               <p style="font-size: 15px; color:#64748b;">Because local production satisfies less than 10% of systemic clinical demand, the regulatory gatekeeping framework favors proactive international partnerships managed via verified, asset-ready distributors like National Pharma. Contact us at info@nationalpharma.net.</p>
-           </div>
-       </div>
-   </section>
+     <div class="pillars-grid">
+         <!-- Pillar Card 1 -->
+         <div class="pillar-card">
+             <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+             <h3>Sustained Financial Growth</h3>
+             <p>The Kuwaiti healthcare and pharmaceutical market is expanding rapidly, projected to reach approximately US$ 7.2 Billion by 2026. This growth is heavily backed by the government’s dedicated healthcare budget, continuous infrastructure modernization, and rising per capita medical expenditure.</p>
+         </div>
 
-   <footer>
-       <div class="footer-grid">
-           <div class="footer-col">
-               <h4 style="color:white; font-size:18px; margin-bottom:10px;">National Pharma</h4>
-               <p>Trusted Pharmaceutical & Medical Device Distribution Partner in the State of Kuwait. Headquartered in Kuwait City, operating under strict Good Distribution Practices (GDP).</p>
-           </div>
-           <div class="footer-col">
-               <h4>Market Access Links</h4>
-               <ul>
-                   <li><a href="regulatory.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Regulatory Services</a></li>
-                   <li><a href="why-kuwait.html" style="color:#94a3b8; text-decoration:none; font-size:14px;">Why Kuwait Analysis</a></li>
-               </ul>
-           </div>
-           <div class="footer-col">
-               <h4>HQ Address</h4>
-               <p>Injazat Tower, Floor 21<br>Kuwait City, State of Kuwait<br>Email: info@nationalpharma.net</p>
-           </div>
-       </div>
-       <div class="footer-bottom">
-           <p>&copy; 2026 National Pharma. Statistical Sources: Grand View Research / GCC Health Reports. Support: info@nationalpharma.net</p>
-       </div>
-   </footer>
+         <!-- Pillar Card 2 -->
+         <div class="pillar-card">
+             <div class="pillar-icon"><i class="fa-solid fa-ship"></i></div>
+             <h3>Direct Gateway for Global Brands</h3>
+             <p>Kuwait relies almost entirely (over 90%) on solid international import pipelines for innovative pharmaceuticals, advanced biomedical equipment, and specialized medical supplies. This massive demand makes it one of the most lucrative markets in the region for foreign manufacturers looking to expand their global footprint.</p>
+         </div>
+
+         <!-- Pillar Card 3 -->
+         <div class="pillar-card">
+             <div class="pillar-icon"><i class="fa-solid fa-hospital"></i></div>
+             <h3>World-Class Healthcare Network</h3>
+             <p>The State of Kuwait possesses a highly sophisticated healthcare network. This includes monumental public medical cities (such as Sheikh Jaber Al-Ahmad Al-Sabah Hospital and the New Jahra Medical City), specialized state-of-the-art research clinics, and hundreds of private hospital networks and retail pharmacies.</p>
+         </div>
+
+         <!-- Pillar Card 4 -->
+         <div class="pillar-card">
+             <div class="pillar-icon"><i class="fa-solid fa-wallet"></i></div>
+             <h3>Premium Treatment Adoption</h3>
+             <p>Supported by one of the highest GDP per capita levels globally, the Kuwaiti market exhibits immediate and rapid adoption of cutting-edge biotechnology, next-generation therapeutic solutions, and premium medical aesthetics. Quality and clinical efficacy are highly valued over basic cost constraints.</p>
+         </div>
+     </div>
+ </main>
+
+ <!-- Procurement Channels Section -->
+ <section class="channels-section">
+     <h2 class="section-title">Market Access & Tenders</h2>
+     <p class="section-subtitle">The Kuwaiti medical market operates seamlessly through two primary, distinct purchasing structures.</p>
+
+     <div class="channels-grid">
+         <!-- Public Sector Box -->
+         <div class="channel-box">
+             <h3><i class="fa-solid fa-gavel"></i> The Public Sector (MOH Tenders)</h3>
+             <p>The absolute largest buyer of medical assets in the nation, operating through centralized, highly structured government tenders. This massive pipeline supplies all public hospital conglomerates, regional primary centers, and institutional clinics under strict quality-control protocols.</p>
+         </div>
+
+         <!-- Private Sector Box -->
+         <div class="channel-box">
+             <h3><i class="fa-solid fa-shop"></i> The Private Sector (Commercial Retail)</h3>
+             <p>A rapidly booming commercial sector consisting of private hospital networks, luxury specialized wellness centers, and extensive retail pharmacy chains. This fast-growing retail channel caters directly to consumers looking for premium healthcare choices and immediate care.</p>
+         </div>
+     </div>
+
+     <!-- Corporate B2B Call to Action -->
+     <div class="partnership-box">
+         <h3>Partnering for Long-Term Value</h3>
+         <p>"To successfully capture Kuwait’s attractive commercial landscape, international life science brands require more than just distribution logistics—they need an experienced local partner with deep regulatory insights. National Pharma provides global manufacturers with a transparent, fully compliant, and sustainable market-entry framework, securing robust positioning across both public and private sectors."</p>
+     </div>
+ </section>
+
+ <!-- Footer Section -->
+ <footer>
+     <div class="footer-grid">
+         <div class="footer-col">
+             <h4 style="color:white; font-size:18px; margin-bottom:10px;">National Pharma</h4>
+             <p>Trusted Pharmaceutical & Medical Device Distribution Partner in the State of Kuwait. Headquartered in Kuwait City, operating under strict Good Distribution Practices (GDP).</p>
+         </div>
+         <div class="footer-col">
+             <h4>Market Access Links</h4>
+             <ul>
+                 <li><a href="regulatory.html">Regulatory Services</a></li>
+                 <li><a href="why-kuwait.html">Why Kuwait Analysis</a></li>
+                 <li><a href="founders.html">Founders & Leadership</a></li>
+             </ul>
+         </div>
+         <div class="footer-col">
+             <h4>HQ Address</h4>
+             <p>Injazat Tower, Floor 21<br>Kuwait City, State of Kuwait<br>Email: info@nationalpharma.net</p>
+         </div>
+     </div>
+     <div class="footer-bottom">
+         <p>&copy; 2026 National Pharma. All Rights Reserved. Compliant with Kuwait MOH Guidelines.</p>
+     </div>
+ </footer>
 
 </body>
 </html>
